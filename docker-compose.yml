@@ -34,15 +34,12 @@ services:
       - VIRTUAL_HOST=eabackoffice.chickenkiller.com
       - LETSENCRYPT_HOST=eabackoffice.chickenkiller.com
 
-  #   webApp:
-  #     build: #tbd
-  #     image: webApp:latest
-  #     container_name: webApp
-  #     ports:
-  #       - 4001:80
-  #     environment:
-  #       - VIRTUAL_HOST=eaweb.chickenkiller.com
-  #       - LETSENCRYPT_HOST=eaweb.chickenkiller.com
+  webApp:
+    image: paubaguer/ea-frontend:latest
+    container_name: webApp
+    environment:
+      - VIRTUAL_HOST=eaweb.chickenkiller.com
+      - LETSENCRYPT_HOST=eaweb.chickenkiller.com
 
   api:
     image: paubaguer/ea-backend:latest
@@ -51,6 +48,5 @@ services:
       - VIRTUAL_HOST=eaapi.chickenkiller.com
       - VIRTUAL_PORT=3000
       - LETSENCRYPT_HOST=eaapi.chickenkiller.com
-
 # volumes:
 #   mongodbData:
