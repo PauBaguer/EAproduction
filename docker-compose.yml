@@ -31,8 +31,8 @@ services:
     image: paubaguer/ea-backoffice:latest
     container_name: backoffice
     environment:
-      - VIRTUAL_HOST=eabackoffice.chickenkiller.com
-      - LETSENCRYPT_HOST=eabackoffice.chickenkiller.com
+      - VIRTUAL_HOST=eabackoffice.crabdance.com
+      - LETSENCRYPT_HOST=eabackoffice.crabdance.com
 
   webApp:
     image: paubaguer/ea-frontend:latest
@@ -48,5 +48,13 @@ services:
       - VIRTUAL_HOST=eaapi.chickenkiller.com
       - VIRTUAL_PORT=3000
       - LETSENCRYPT_HOST=eaapi.chickenkiller.com
+
+  jovoApi:
+    image: paubaguer/ea-jovobackend:latest
+    container_name: jovobackend
+    environment:
+      - VIRTUAL_HOST=eajovo.chickenkiller.com
+      - VIRTUAL_PORT=5000
+      - LETSENCRYPT_HOST=eajovo.chickenkiller.com
 # volumes:
 #   mongodbData:
